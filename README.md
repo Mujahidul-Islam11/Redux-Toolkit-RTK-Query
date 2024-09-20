@@ -6,7 +6,7 @@
 # What is Redux?
 </h3>
 <p>
-Redux is an open-source "JavaScript Library" for managing state of an application in a predictable way. It's commonly used with libraries like ReactJs for building user interfaces but it can also be used with any JavaScript framework or library.
+Redux is an open-source <b>JavaScript Library</b> for managing state of an application in a predictable way. It's commonly used with libraries like ReactJs for building user interfaces but it can also be used with any JavaScript framework or library.
 </p>
 <div align="center"> 
   <a href="https://redux-toolkit.js.org/introduction/getting-started">
@@ -67,3 +67,17 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 <br>
+<h3>
+# What is Slice?
+</h3>
+<p>
+A slice is a <b>piece of store state</b> and corresponding reducer logic to update that state. Slices are a way to organize our redux store by breaking it down into smaller, and more manageable parts.
+</p>
+
+<br>
+<h3>
+# Slices Analogy
+</h3>
+<p>
+Imagine you have a big cake, and you want to cut it into smaller and more manageable pieces. Each smaller piece is like a "slice" of cake. In the context redux toolkit a "slice" is like a smaller part of your application's state and the instruction on how to change and update that specific part.
+</p>
