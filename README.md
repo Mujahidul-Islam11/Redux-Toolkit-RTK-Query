@@ -25,7 +25,7 @@ The official, opinionated, batteries-included toolset for efficient Redux Develo
 <br>
 <br>
 
-<h2>Setup & Installation</h2>
+<h2># Setup & Installation</h2>
 
 ```bash
 npm create vite@latest project-name -- -- template react
