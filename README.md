@@ -33,6 +33,7 @@ cd project-name
 npm install
 npm install @reduxjs/toolkit react-redux
 ```
+<br>
 
 <b>:create your first redux store ;)</b>
 
@@ -45,3 +46,20 @@ export const store = configureStore(
   }
 );
 ```
+<br>
+
+<b>:Use your store wherever you want ;0</b>
+
+```bash
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import { Provider } from 'react-redux'
+import { store } from './redux/store.js'
+
+createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+)
+```
+<br>
