@@ -22,6 +22,9 @@ The official, opinionated, batteries-included toolset for efficient Redux Develo
 <h4>Redux Toolkit-> Makes the redux easy to work with.</h4>
 </div>
 
+<br>
+<br>
+
 <h2>Setup & Installation</h2>
 
 ```bash
