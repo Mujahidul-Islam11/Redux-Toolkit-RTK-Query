@@ -13,7 +13,7 @@ Redux is an open-source <b>JavaScript Library</b> for managing state of an appli
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRypt9wK5ScxQsfzkgr3QDCtPCCwMX56eJtGQ&s" alt="Redux" />
   </a>
 </div>
-<p>
+<p align="center">
 The official, opinionated, batteries-included toolset for efficient Redux Development.
 </p>
 
