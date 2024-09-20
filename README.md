@@ -34,7 +34,7 @@ npm install
 npm install @reduxjs/toolkit react-redux
 ```
 
-:create your first redux store ;)
+<b>:create your first redux store ;)</b>
 
 ```bash
 import {configureStore} from "@reduxjs/toolkit";
