@@ -79,5 +79,5 @@ A slice is a <b>piece of store state</b> and corresponding reducer logic to upda
 # Slices Analogy
 </h3>
 <p>
-Imagine you have a big cake, and you want to cut it into smaller and more manageable pieces. Each smaller piece is like a "slice" of cake. In the context redux toolkit a "slice" is like a smaller part of your application's state and the instruction on how to change and update that specific part.
+Imagine you have a big cake, and you want to cut it into smaller and more manageable pieces. Each smaller piece is like a <i>"slice"</i> of cake. In the context redux toolkit a <i>"slice"</i> is like a smaller part of your application's state and the instruction on how to change and update that specific part.
 </p>
