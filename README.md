@@ -85,13 +85,13 @@ Imagine you have a big cake, and you want to cut it into smaller and more manage
 <b>:Create your very first slice :)</b>
 
 ```bash
-// main.jsx
+// ./src/features/counterSlice.js
 import {createSlice} from "@reduxjs/toolkit";
 
-const counterSlice = createSlice({ // compare with the bellow to understand
-    name: "counter",               // const [counter, setCounter] = useState()
-    initialState: {value: 0},      // useState(0) -> you can also give anything instead of value
-    reducers: {                    // setCounter(counter++) / setCounter(counter--)
+const counterSlice = createSlice({   // compare with the bellow to understand
+    name: "counter",                 // const [counter, setCounter] = useState()
+    initialState: {value: 0},        // useState(0) -> you can also give anything instead of value
+    reducers: {                      // setCounter(counter++) / setCounter(counter--)
          increment(state){           
             state.value++
          },
