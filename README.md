@@ -208,7 +208,7 @@ for API calls in a React and Redux application.
 </ul>
 
 
-<b>:Get all products from a dummyData using RTK query'-'</b>
+<b>:Get all products data'-'</b>
 
 ```bash
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
