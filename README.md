@@ -107,7 +107,7 @@ export const {increment, decrement} = counterSlice.actions;
 export default counterSlice.reducer;
 ```
 
-: import and use counterReducer in your store
+<b>: import and use counterReducer in your store</b>
 
 ```bash
 import { configureStore } from "@reduxjs/toolkit";
@@ -138,7 +138,7 @@ In similar terms, it lets you <b>change the state</b> in your Redux store within
 </p>
 
 <br>
-: Take actions to update the store ;)
+<b>: Take actions to update the store ;)</b>
 
 ```bash
 import React from 'react';
@@ -165,8 +165,9 @@ const Counter = () => {
 export default Counter;
 ```
 
+<b>
 : Do not forget to render Counter component in the App.jsx ;)
-
+</b>
 ```bash
 import React from 'react';
 import Counter from './Counter';
@@ -192,7 +193,7 @@ Redux Toolkit Query (RTK) is specially designed for <b>data fetching</b> caching
 for API calls in a React and Redux application.
 </p>
 
-:What we will learn? :D
+<b>:What we will learn? :D</b>
 
 <ul>
 <li>How to Get All Products</li>
