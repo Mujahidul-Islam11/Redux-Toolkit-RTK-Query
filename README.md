@@ -28,8 +28,8 @@ The official, opinionated, batteries-included toolset for efficient Redux Develo
 <h2># Setup & Installation</h2>
 
 ```bash
-npm create vite@latest project-name -- -- template react
-cd project-name
+npm create vite@latest my-project -- -- template react
+cd my-project
 npm install
 npm install @reduxjs/toolkit react-redux
 ```
@@ -82,10 +82,11 @@ A slice is a <b>piece of store state</b> and corresponding reducer logic to upda
 Imagine you have a big cake, and you want to cut it into smaller and more manageable pieces. Each smaller piece is like a <i>"slice"</i> of cake. In the context redux toolkit a <i>"slice"</i> is like a smaller part of your application's state and the instruction on how to change and update that specific part.
 </p>
 
-<b>:Create your very first slice :)</b>
+<b>:Create your very first counter slice :)</b>
 
 ```bash
 // ./src/features/counterSlice.js
+
 import {createSlice} from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({   // compare with the bellow to understand
@@ -101,6 +102,23 @@ const counterSlice = createSlice({   // compare with the bellow to understand
     }
 })
 
-export const {increment, decrement}=counterSlice.actions;
+export const {increment, decrement} = counterSlice.actions;
 export default counterSlice.reducer;
 ```
+
+<br>
+<h3>
+# useSelector() - Hook
+</h3>
+<p>
+useSelector allows us to <b>access and read data</b> from the redux store.
+</p>
+
+<br>
+<h3>
+# useDispatch() - Hook
+</h3>
+<p>
+The dispatch function is used to send actions to the store, triggering updates to the applcation state. 
+In smiler terms, it lets us <b>change the state</b> in our Redux store within our React Components.
+</p>
