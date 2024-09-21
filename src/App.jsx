@@ -1,11 +1,12 @@
 import React from 'react';
 import Counter from './Counter';
+import AllProducts from './components/AllProducts';
 
 const App = () => {
   return (
     <div>
       {/* <Counter/> */}
-      APP
+      <AllProducts/>
     </div>
   );
 };
