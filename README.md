@@ -81,3 +81,26 @@ A slice is a <b>piece of store state</b> and corresponding reducer logic to upda
 <p>
 Imagine you have a big cake, and you want to cut it into smaller and more manageable pieces. Each smaller piece is like a <i>"slice"</i> of cake. In the context redux toolkit a <i>"slice"</i> is like a smaller part of your application's state and the instruction on how to change and update that specific part.
 </p>
+
+<b>:Create your very first slice :)</b>
+
+```bash
+// main.jsx
+import {createSlice} from "@reduxjs/toolkit";
+
+const counterSlice = createSlice({ // compare with the bellow to understand
+    name: "counter",               // const [counter, setCounter] = useState()
+    initialState: {value: 0},      // useState(0) -> you can also give anything instead of value
+    reducers: {                    // setCounter(counter++) / setCounter(counter--)
+         increment(state){           
+            state.value++
+         },
+         decrement(state){
+            state.value--
+         }
+    }
+})
+
+export const {increment, decrement}=counterSlice.actions;
+export default counterSlice.reducer;
+```
