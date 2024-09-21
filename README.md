@@ -168,6 +168,7 @@ export default Counter;
 <b>
 : Do not forget to render Counter component in the App.jsx ;)
 </b>
+
 ```bash
 import React from 'react';
 import Counter from './Counter';
