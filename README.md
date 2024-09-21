@@ -105,6 +105,17 @@ const counterSlice = createSlice({   // compare with the bellow to understand
 export const {increment, decrement} = counterSlice.actions;
 export default counterSlice.reducer;
 ```
+: import and use counterReducer in your store
+```bash
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./features/counterSlice.js"
+
+export const store = configureStore({
+    reducer: {
+        counter: counterReducer,
+    }
+});
+```
 
 <br>
 <h3>
@@ -120,5 +131,5 @@ useSelector allows us to <b>access and read data</b> from the redux store.
 </h3>
 <p>
 The dispatch function is used to send actions to the store, triggering updates to the applcation state. 
-In smiler terms, it lets us <b>change the state</b> in our Redux store within our React Components.
+In similar terms, it lets you <b>change the state</b> in your Redux store within your React Components.
 </p>
