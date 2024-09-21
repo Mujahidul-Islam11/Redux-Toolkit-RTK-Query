@@ -186,8 +186,11 @@ export default App;
 
 <br>
 
+<h2>
+# Redux Toolkit Query
+</h2>
 <h3>
-# Redux Toolkit Query?
+# What is RTK Query?
 </h3>
 <p>
 Redux Toolkit Query (RTK) is specially designed for <b>data fetching</b> caching, and state management
