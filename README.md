@@ -1,5 +1,3 @@
-
-
 <h1 align="left">Redux Toolkit & RTK query</h1>
 
 <h3>
@@ -33,6 +31,7 @@ cd my-project
 npm install
 npm install @reduxjs/toolkit react-redux
 ```
+
 <br>
 
 <b>:create your first redux store ;)</b>
@@ -48,6 +47,7 @@ export const store = configureStore(
   }
 );
 ```
+
 <br>
 
 <b>:Use your store wherever you want ;0</b>
@@ -66,6 +66,7 @@ createRoot(document.getElementById('root')).render(
   </Provider>,
 )
 ```
+
 <br>
 <h3>
 # What is Slice?
@@ -93,7 +94,7 @@ const counterSlice = createSlice({   // compare with the bellow to understand
     name: "counter",                 // const [counter, setCounter] = useState()
     initialState: {value: 0},        // useState(0) -> you can also give anything instead of value
     reducers: {                      // setCounter(counter++) / setCounter(counter--)
-         increment(state){           
+         increment(state){
             state.value++
          },
          decrement(state){
@@ -105,7 +106,9 @@ const counterSlice = createSlice({   // compare with the bellow to understand
 export const {increment, decrement} = counterSlice.actions;
 export default counterSlice.reducer;
 ```
+
 : import and use counterReducer in your store
+
 ```bash
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counterSlice.js"
@@ -143,7 +146,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {increment, decrement} from "./redux/features/counterSlice.js"
 
 const Counter = () => {
-    // Read the data from the store 
+    // Read the data from the store
     const count = useSelector((state) => state.counter.value);
 
     // Changing the data by sending "actions" to the store
@@ -163,6 +166,7 @@ export default Counter;
 ```
 
 : Do not forget to render Counter component in the App.jsx ;)
+
 ```bash
 import React from 'react';
 import Counter from './Counter';
@@ -176,4 +180,45 @@ const App = () => {
 };
 
 export default App;
+```
+
+<br>
+
+<h3>
+# Redux Toolkit Query?
+</h3>
+<p>
+Redux Toolkit Query (RTK) is specially designed for <b>data fetching</b> caching, and state management
+for API calls in a React and Redux application.
+</p>
+
+:What we will learn? :D
+
+<ul>
+<li>How to Get All Products</li>
+<li>How to Get a Specific Product</li>
+<li>How to Add a New Product</li>
+<li>How to Update a Product</li>
+<li>How to Delete a Product</li>
+</ul>
+
+
+<b>:Get all products from a dummyData using RTK query'-'</b>
+
+```bash
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+
+export const productsAPI = createApi({
+    reducerPath: "products",
+    baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com'}),
+    endpoints: (builder) => {
+        // Get all data
+        getAllProducts: builder.query({
+            query: ()=> "/products"
+        })
+    }
+})
+
+export const { useGetAllProductsQuery } = productsAPI;
 ```
