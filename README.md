@@ -207,7 +207,6 @@ for API calls in a React and Redux application.
 <li>How to Delete a Product</li>
 </ul>
 
-
 <b>:Get all products data'-'</b>
 
 ```bash
@@ -240,9 +239,9 @@ import { productsAPI } from "./services/dummyData";
 
 export const store = configureStore({
     reducer: {
-        [productsAPI.reducerPath]: productsAPI.reducer,   
+        [productsAPI.reducerPath]: productsAPI.reducer,
     },
-    middleware: (getDefaultMiddleware) => 
+    middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware.concat(productsAPI.middleware),
 });
 
@@ -284,6 +283,7 @@ const AllProducts = () => {
 
 export default AllProducts;
 ```
+
 <br>
 <b>:Get one product data ;d</b>
 
@@ -333,4 +333,77 @@ const Product = () => {
 };
 
 export default Product;
+```
+
+<br>
+<b>:Add a new product</b>
+
+```bash
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+
+export const productsAPI = createApi({
+    reducerPath: "products",
+    baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com'}),
+    endpoints: (builder) => {
+        // Add one data
+        addNewProduct: builder.mutation({
+            query: (id)=> ({
+              query: (newProduct) => ({
+              url: `/products/add`,
+              method: "Post",
+              headers: { "Content-Type": "application/json" },
+              body: newProduct,
+      }),
+            })
+        })
+    }
+})
+
+export const { useGetProductByIdQuery } = productsAPI;
+```
+
+<b>:Add and show the new product</b>
+
+```bash
+// /product.jsx
+
+import React from "react";
+import { useAddNewProductMutation } from "../redux/services/dummyData";
+
+const AddNewProduct = () => {
+  const [addNewProduct, { data, error, isLoading }] = useAddNewProductMutation();
+
+  {
+    error ? <>Oops!</> : isLoading && <>Loading...</>;
+  }
+
+  const handleAddProduct = async (e) => {
+    try {
+      const newProduct = {
+        id: 1,
+        title: "Cake khayega?",
+        thumbnail: "kichu nai",
+      };
+
+      await addNewProduct(newProduct);
+    } catch (error) {
+      console.log("oops! something went wrong", error);
+    }
+  };
+
+  return (
+    <div>
+      <h3>{data?.id}</h3>
+      <h3>{data?.title}</h3>
+      <img src={data?.thumbnail} alt={data?.title} />
+
+      <button onClick={() => handleAddProduct()} disabled={isLoading}>
+        Add Product
+      </button>
+    </div>
+  );
+};
+
+export default AddNewProduct;
 ```

@@ -1,18 +1,26 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const productsAPI = createApi({
-    reducerPath: "products",
-    baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com'}),
-    endpoints: (builder) => ({
-        getAllProducts: builder.query({
-            query: ()=> "/products"
-        }),
-        
-        getProductById: builder.query({
-            query: (id)=> `/products/${id}`
-        })
-    })
-})
+  reducerPath: "products",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com" }),
+  endpoints: (builder) => ({
+    getAllProducts: builder.query({          // <= fetching
+      query: () => "/products",
+    }),
 
-export const { useGetAllProductsQuery, useGetProductByIdQuery } = productsAPI;
+    getProductById: builder.query({         // <= fetching
+      query: (id) => `/products/${id}`,       
+    }),
+
+    addNewProduct: builder.mutation({        // <= mutating/adding/updating/deleting
+      query: (newProduct) => ({
+        url: `/products/add`,
+        method: "Post",
+        headers: { "Content-Type": "application/json" },
+        body: newProduct,
+      }),
+    }),
+  }),
+});
+
+export const { useGetAllProductsQuery, useGetProductByIdQuery, useAddNewProductMutation } = productsAPI;
