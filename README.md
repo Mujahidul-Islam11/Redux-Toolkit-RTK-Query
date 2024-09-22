@@ -227,6 +227,7 @@ export const productsAPI = createApi({
 
 export const { useGetAllProductsQuery } = productsAPI;
 ```
+
 <br>
 <b>:Register the productsAPI in store.js</b>
 
@@ -282,5 +283,54 @@ const AllProducts = () => {
 };
 
 export default AllProducts;
+```
+<br>
+<b>:Get one product data ;d</b>
 
+```bash
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+
+export const productsAPI = createApi({
+    reducerPath: "products",
+    baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com'}),
+    endpoints: (builder) => {
+        // Get one data
+        getProductById: builder.query({
+            query: (id)=> `/products/${id}`
+        })
+    }
+})
+
+export const { useGetProductByIdQuery } = productsAPI;
+```
+
+<br>
+<b>:Show the product data</b>
+
+```bash
+// /product.jsx
+
+import { useGetProductByIdQuery } from "../redux/services/dummyData";
+
+const Product = () => {
+  const { error, isLoading, data } = useGetProductByIdQuery(2);
+
+  return (
+    <div>
+      {error ? (
+        <> Oops! something went wrong</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+        <img src={data?.thumbnail} alt="" />
+        <h3>{data?.title}</h3>
+        </>
+      ) : null}
+    </div>
+  );
+};
+
+export default Product;
 ```
