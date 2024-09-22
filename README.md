@@ -362,6 +362,7 @@ export const productsAPI = createApi({
 
 export const { useGetProductByIdQuery } = productsAPI;
 ```
+<br>
 
 <b>:Add and show the new product</b>
 

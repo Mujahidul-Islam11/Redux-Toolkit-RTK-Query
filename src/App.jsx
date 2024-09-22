@@ -2,6 +2,7 @@ import React from 'react';
 import Counter from './Counter';
 import Product from './components/Product';
 import AddNewProduct from './components/AddNewProduct';
+import UpdateProduct from './components/UpdateProduct';
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
       {/* <Counter/> */}
       {/* <AllProducts/> */}
       {/* <Product/> */}
-      <AddNewProduct></AddNewProduct>
+      {/* <AddNewProduct></AddNewProduct> */}
+      <UpdateProduct/>
     </div>
   );
 };
