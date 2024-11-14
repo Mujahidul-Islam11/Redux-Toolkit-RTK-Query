@@ -9,9 +9,12 @@ export const counterSlice = createSlice({   // compare with the bellow to unders
          },
          decrement(state){
             state.value--
+         },
+         incrementByValue(state, actions){
+            state.value = state.value + actions.payload;
          }
     }
 })
 
-export const {increment, decrement} = counterSlice.actions;
+export const {increment, decrement, incrementByValue} = counterSlice.actions;
 export default counterSlice.reducer;

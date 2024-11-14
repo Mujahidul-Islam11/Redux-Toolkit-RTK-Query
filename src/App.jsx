@@ -7,11 +7,11 @@ import UpdateProduct from './components/UpdateProduct';
 const App = () => {
   return (
     <div>
-      {/* <Counter/> */}
+      <Counter/>
       {/* <AllProducts/> */}
       {/* <Product/> */}
       {/* <AddNewProduct></AddNewProduct> */}
-      <UpdateProduct/>
+      {/* <UpdateProduct/> */}
     </div>
   );
 };
