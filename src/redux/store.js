@@ -6,10 +6,10 @@ import { productsAPI } from "./services/dummyData";
 export const store = configureStore({
     reducer: {
         counter: counterReducer,
-        [productsAPI.reducerPath]: productsAPI.reducer,   
+        // [productsAPI.reducerPath]: productsAPI.reducer,   
     },
-    middleware: (getDefaultMiddleware) => 
-    getDefaultMiddleware().concat(productsAPI.middleware),
+    // middleware: (getDefaultMiddleware) => 
+    // getDefaultMiddleware().concat(productsAPI.middleware),
 });
 
 setupListeners(store.dispatch);
